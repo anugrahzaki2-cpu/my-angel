@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aurel 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#0f0f0f;
+    color:white;
+}
+
+/* BACKGROUND */
+
+.bg{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('foto3.jpg') center/cover;
+    z-index:-3;
+    filter:blur(2px);
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(255,192,203,.15),
+        rgba(255,105,180,.2)
+    );
+    z-index:-2;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    z-index:999;
+    box-shadow:0 0 25px rgba(255,105,180,.5);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:430px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+    border-radius:30px;
+    padding:35px 25px;
+    box-shadow:0 0 40px rgba(255,105,180,.25);
+    animation:fade 1.5s ease;
+}
+
+.profile{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid rgba(255,255,255,.7);
+    box-shadow:0 0 25px rgba(255,105,180,.8);
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    color:#ffd1e6;
+    margin-bottom:5px;
+}
+
+.sub{
+    font-size:1rem;
+    color:#f3d8e5;
+    margin-bottom:25px;
+}
+
+.message{
+    line-height:1.8;
+    font-size:.95rem;
+    color:#f7f7f7;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.btn{
+    padding:14px 35px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff4f9b,#ff85b3);
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,105,180,.5);
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* GALLERY */
+
+.gallery{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.gallery h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    margin-bottom:40px;
+    color:#ffd6e8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.grid img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:25px;
+    transition:.4s;
+    box-shadow:0 0 25px rgba(255,105,180,.25);
+}
+
+.grid img:hover{
+    transform:scale(1.03);
+}
+
+/* COUNTDOWN */
+
+.count{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.count h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:#ffd6e8;
+    margin-bottom:25px;
+}
+
+.timer{
+    font-size:1.3rem;
+    color:white;
+    line-height:2;
+}
+
+/* FLOAT HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:#ff8fc0;
+    animation:float linear forwards;
+    z-index:-1;
+}
+
+@keyframes float{
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#f3d8e5;
+    font-size:.9rem;
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<button class="music-btn" onclick="playMusic()">🎵</button>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="card">
+
+<img src="foto1.jpg" class="profile">
+
+<h1>Aurel</h1>
+
+<p class="sub">
+Luxury Romantic Website 💌
+</p>
+
+<div class="message">
+makasih yaa udah hadir di hidup aku,  
+makasih udah jadi rumah paling nyaman buat ndut.  
+
+semoga kita selalu bisa bareng terus,  
+saling jaga, saling ngerti, dan saling sayang sampai kapanpun 💗
+</div>
+
+<button class="btn" onclick="showLove()">
+open my heart 🤍
+</button>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<h2>our memories ✨</h2>
+
+<div class="grid">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="count">
+
+<h2>since we met 💞</h2>
+
+<div class="timer" id="timer"></div>
+
+</section>
+
+<footer>
+made with love by ndut 💗
+</footer>
+
+<script>
+
+/* MUSIC */
+
+const music = document.getElementById("music");
+
+function playMusic(){
+    music.play();
+}
+
+/* ALERT */
+
+function showLove(){
+    alert("i love you more than yesterday, aurel 💖");
+}
+
+/* HEART ANIMATION */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "💗";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+
+/* COUNTDOWN */
+
+const startDate = new Date("August 28, 2025 00:00:00").getTime();
+
+setInterval(()=>{
+
+    const now = new Date().getTime();
+
+    const distance = now - startDate;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        /
+        (1000 * 60)
+    );
+
+    document.getElementById("timer").innerHTML =
+    days + " days " +
+    hours + " hours " +
+    minutes + " minutes together 💖";
+
+},1000);
+
+</script>
+
+</body>
+</html>
