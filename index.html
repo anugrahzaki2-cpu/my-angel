@@ -1,226 +1,343 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Angel - Aurel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Angel - Aurel 💖</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body{
-      background: linear-gradient(135deg,#ffb6d9,#ffd6ea,#fff0f6);
-      overflow-x:hidden;
-      color:white;
-      text-align:center;
-    }
+<style>
 
-    .container{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:30px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    .glass{
-      background:rgba(255,255,255,0.15);
-      border:1px solid rgba(255,255,255,0.3);
-      backdrop-filter:blur(12px);
-      border-radius:30px;
-      padding:30px;
-      width:90%;
-      max-width:430px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.2);
-      animation:fadeIn 1.5s ease;
-    }
+body{
+    background:linear-gradient(135deg,#ffb6d9,#ffd6ea,#fff0f6);
+    overflow-x:hidden;
+    color:white;
+    text-align:center;
+    min-height:100vh;
+}
 
-    h1{
-      font-size:38px;
-      margin-bottom:10px;
-      color:white;
-      text-shadow:0 0 10px rgba(255,255,255,0.7);
-    }
+/* CONTAINER */
 
-    p{
-      font-size:16px;
-      line-height:1.7;
-      margin-top:15px;
-      color:white;
-    }
+.container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
 
-    button{
-      margin-top:25px;
-      padding:14px 35px;
-      border:none;
-      border-radius:50px;
-      background:white;
-      color:#ff4f93;
-      font-size:17px;
-      cursor:pointer;
-      transition:0.3s;
-      font-weight:bold;
-      box-shadow:0 5px 20px rgba(255,255,255,0.5);
-    }
+.glass{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:30px;
+    width:90%;
+    max-width:430px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+    animation:fadeIn 1.5s ease;
+}
 
-    button:hover{
-      transform:scale(1.05);
-      background:#ffe4f0;
-    }
+/* TITLE */
 
-    .hidden{
-      display:none;
-    }
+h1{
+    font-size:40px;
+    margin-bottom:10px;
+    color:white;
+    text-shadow:0 0 10px rgba(255,255,255,0.7);
+}
 
-    .gallery{
-      margin-top:20px;
-      display:grid;
-      gap:15px;
-    }
+.subtitle{
+    margin-top:10px;
+    font-size:16px;
+    color:white;
+}
 
-    .gallery img{
-      width:100%;
-      border-radius:20px;
-      object-fit:cover;
-      box-shadow:0 5px 20px rgba(0,0,0,0.2);
-      animation:float 3s ease-in-out infinite;
-    }
+/* BUTTON */
 
-    .date{
-      margin-top:20px;
-      font-size:18px;
-      font-weight:bold;
-      color:white;
-    }
+button{
+    margin-top:25px;
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f93;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+    box-shadow:0 5px 20px rgba(255,255,255,0.5);
+}
 
-    .love{
-      position:fixed;
-      top:-10px;
-      color:pink;
-      animation:fall linear infinite;
-      z-index:999;
-    }
+button:hover{
+    transform:scale(1.05);
+    background:#ffe4f0;
+}
 
-    @keyframes fadeIn{
-      from{
+/* HIDDEN */
+
+.hidden{
+    display:none;
+}
+
+/* GALLERY */
+
+.gallery{
+    margin-top:25px;
+    display:grid;
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    animation:float 3s ease-in-out infinite;
+}
+
+/* MESSAGE */
+
+.message{
+    margin-top:25px;
+    line-height:1.8;
+    font-size:16px;
+    color:white;
+}
+
+/* DATE */
+
+.date{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* HEARTS */
+
+.love{
+    position:fixed;
+    top:-10px;
+    color:pink;
+    animation:fall linear infinite;
+    z-index:999;
+}
+
+/* QUESTION */
+
+.question-box{
+    margin-top:30px;
+}
+
+.question-box h2{
+    margin-bottom:20px;
+}
+
+#noBtn{
+    margin-left:10px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+    from{
         opacity:0;
         transform:translateY(20px);
-      }
-      to{
+    }
+    to{
         opacity:1;
         transform:translateY(0);
-      }
     }
+}
 
-    @keyframes float{
-      0%{
+@keyframes float{
+    0%{
         transform:translateY(0px);
-      }
-      50%{
+    }
+    50%{
         transform:translateY(-8px);
-      }
-      100%{
+    }
+    100%{
         transform:translateY(0px);
-      }
     }
+}
 
-    @keyframes fall{
-      to{
+@keyframes fall{
+    to{
         transform:translateY(100vh);
-      }
     }
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- MUSIC -->
+
 <audio id="bgmusic" loop controls hidden>
-  <source src="music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- MAIN -->
+
 <div class="container">
-  <div class="glass">
 
-    <h1>Hi Ndut 💖</h1>
+<div class="glass">
 
-    <p>
-      ada sesuatu buat kamu ✨
-    </p>
+<h1>Hi Ndut 💖</h1>
 
-    <button onclick="openHeart()">
-      Open My Heart 💌
-    </button>
+<p class="subtitle">
+ada sesuatu buat kamu ✨
+</p>
 
-    <div id="content" class="hidden">
+<button onclick="openHeart()">
+Open My Heart 💌
+</button>
 
-      <div class="gallery">
-        <img src="foto1.jpg" alt="">
-        <img src="foto2.jpg" alt="">
-        <img src="foto3.jpg" alt="">
-      </div>
+<!-- CONTENT -->
 
-      <div class="date">
-        Since 28 Agustus 💞
-      </div>
+<div id="content" class="hidden">
 
-      <p>
-        Makasih ya sayang udah hadir di hidup aku 💖
-        <br><br>
-
-        Kamu itu rumah paling nyaman yang pernah aku temuin.
-        Semoga kita selalu sama-sama terus yaa ✨
-        <br><br>
-
-        Aku bakal selalu sayang sama kamu,
-        dalam keadaan apapun 🤍
-      </p>
-
-    </div>
-
-  </div>
+<div class="gallery">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
 </div>
 
-<script>
-  function openHeart() {
+<div class="date">
+Since 28 Agustus 💞
+</div>
 
-    document.getElementById("content")
-      .classList.remove("hidden");
+<div class="message">
+
+Makasih ya sayang udah hadir di hidup aku 💖
+<br><br>
+
+Kamu itu rumah paling nyaman yang pernah aku temuin.
+Semoga kita selalu sama-sama terus yaa ✨
+<br><br>
+
+Aku bakal selalu sayang sama kamu,
+dalam keadaan apapun 🤍
+
+</div>
+
+<!-- QUESTION -->
+
+<div class="question-box">
+
+<h2>
+Do you love ndut? 💌
+</h2>
+
+<button onclick="yesLove()">
+YES 💖
+</button>
+
+<button id="noBtn" onmouseover="moveButton()">
+NO 😭
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+
+<script>
+
+function openHeart(){
+
+    document
+    .getElementById("content")
+    .classList.remove("hidden");
 
     const music =
-      document.getElementById("bgmusic");
+    document.getElementById("bgmusic");
 
-    music.play();
-  }
+    music.volume = 1;
 
-  function createLove(){
+    music.play()
+    .then(()=>{
+        console.log("music started");
+    })
+    .catch(()=>{
+        alert("tap sekali lagi ya sayang 💖");
+    });
+
+}
+
+/* YES BUTTON */
+
+function yesLove(){
+
+    alert("YEAYYYY 💖 AKU SAYANG KAMU LEBIH BANYAKK");
+
+}
+
+/* NO BUTTON RUN */
+
+function moveButton(){
+
+    const btn =
+    document.getElementById("noBtn");
+
+    btn.style.position = "absolute";
+
+    btn.style.left =
+    Math.random() * 80 + "%";
+
+    btn.style.top =
+    Math.random() * 80 + "%";
+
+}
+
+/* HEART EFFECT */
+
+function createLove(){
 
     const love =
-      document.createElement("div");
+    document.createElement("div");
 
     love.classList.add("love");
 
     love.innerHTML = "💖";
 
     love.style.left =
-      Math.random() * 100 + "vw";
+    Math.random() * 100 + "vw";
 
     love.style.animationDuration =
-      Math.random() * 3 + 2 + "s";
+    Math.random() * 3 + 2 + "s";
 
     love.style.fontSize =
-      Math.random() * 20 + 15 + "px";
+    Math.random() * 20 + 15 + "px";
 
     document.body.appendChild(love);
 
     setTimeout(()=>{
-      love.remove();
+        love.remove();
     },5000);
-  }
+
+}
+
+setInterval(createLove,300);
+
+</script>
+
+</body>
+</html>
 
   setInterval(createLove,300);
 </script>
