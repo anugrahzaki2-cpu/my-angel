@@ -17,7 +17,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ff9ecf,#ffcce5,#fff0f7);
+    background:linear-gradient(135deg,#ff9ecf,#ffd4e8,#fff0f7);
     overflow-x:hidden;
     min-height:100vh;
     display:flex;
@@ -30,18 +30,20 @@ body{
 
 .login-box,
 .main-box{
-    background:rgba(255,255,255,0.25);
+    background:rgba(255,255,255,0.30);
     border:1px solid rgba(255,255,255,0.4);
     backdrop-filter:blur(15px);
-    border-radius:30px;
+    border-radius:35px;
     padding:30px;
     width:100%;
-    max-width:470px;
+    max-width:500px;
     text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,0.2);
-    animation:fadeIn 1.5s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    animation:fadeIn 1.2s ease;
     position:relative;
 }
+
+/* HIDDEN */
 
 .hidden{
     display:none;
@@ -50,23 +52,35 @@ body{
 /* TITLE */
 
 h1{
-    color:#ff2f7d;
-    font-size:38px;
+    color:#c2185b;
+    font-size:40px;
     margin-bottom:10px;
+    font-weight:700;
 }
 
 h2{
-    color:#ff2f7d;
-    margin-top:30px;
+    color:#c2185b;
+    margin-top:35px;
     margin-bottom:15px;
+    font-size:25px;
 }
 
+/* TEXT */
+
 p{
-    color:#5a2a42;
+    color:#4a2033;
     font-size:16px;
-    line-height:1.8;
+    line-height:1.9;
     margin-top:15px;
     font-weight:500;
+}
+
+.message{
+    color:#4a2033;
+    font-size:17px;
+    line-height:2;
+    margin-top:25px;
+    font-weight:600;
 }
 
 /* INPUT */
@@ -80,6 +94,8 @@ input{
     outline:none;
     font-size:16px;
     text-align:center;
+    color:#c2185b;
+    font-weight:bold;
 }
 
 /* BUTTON */
@@ -112,30 +128,42 @@ button:hover{
     gap:15px;
 }
 
-.gallery img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    animation:float 3s ease-in-out infinite;
-    transition:.3s;
+.photo-card{
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    position:relative;
 }
 
-.gallery img:hover{
-    transform:scale(1.03);
+.photo-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.photo-card img:hover{
+    transform:scale(1.08);
+}
+
+.big{
+    grid-column:span 2;
+}
+
+.big img{
+    height:280px;
 }
 
 /* DATE */
 
 .date{
     margin-top:20px;
-    color:#ff2f7d;
+    color:#c2185b;
     font-size:18px;
     font-weight:bold;
 }
 
-/* LOVE */
+/* HEART */
 
 .love{
     position:fixed;
@@ -143,12 +171,14 @@ button:hover{
     color:#ff4f93;
     animation:fall linear infinite;
     z-index:999;
+    pointer-events:none;
 }
 
 /* NO BUTTON */
 
 #noBtn{
     position:absolute;
+    margin-left:10px;
 }
 
 /* ANIMATION */
@@ -161,18 +191,6 @@ button:hover{
     to{
         opacity:1;
         transform:translateY(0);
-    }
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-    100%{
-        transform:translateY(0px);
     }
 }
 
@@ -203,7 +221,8 @@ button:hover{
 Masukkan password tanggal jadian dulu yaa ✨
 </p>
 
-<input type="password"
+<input 
+type="password"
 id="password"
 placeholder="28/08/2025">
 
@@ -215,8 +234,7 @@ Masuk 💌
 
 <!-- MAIN -->
 
-<div class="main-box hidden"
-id="mainBox">
+<div class="main-box hidden" id="mainBox">
 
 <h1>Hi Ndut 💖</h1>
 
@@ -236,11 +254,25 @@ Open My Heart 💌
 
 <div class="gallery">
 
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-<img src="foto4.jpg">
-<img src="foto5.jpg">
+<div class="photo-card big">
+    <img src="foto1.jpg">
+</div>
+
+<div class="photo-card">
+    <img src="foto2.jpg">
+</div>
+
+<div class="photo-card">
+    <img src="foto3.jpg">
+</div>
+
+<div class="photo-card">
+    <img src="foto4.jpg">
+</div>
+
+<div class="photo-card">
+    <img src="foto5.jpg">
+</div>
 
 </div>
 
@@ -252,7 +284,7 @@ Since 28 Agustus 2025 💞
 
 <!-- MESSAGE -->
 
-<p>
+<p class="message">
 
 Makasih ya sayang udah hadir di hidup aku 💖
 <br><br>
@@ -279,7 +311,8 @@ Do you love ndut? 💌
 YES 💖
 </button>
 
-<button id="noBtn"
+<button 
+id="noBtn"
 onmouseover="moveButton()"
 onclick="moveButton()">
 NO 😭
