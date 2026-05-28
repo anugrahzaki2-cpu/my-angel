@@ -17,75 +17,90 @@
 }
 
 body{
-    background:linear-gradient(135deg,#ffb6d9,#ffd6ea,#fff0f6);
+    background:linear-gradient(135deg,#ff9ecf,#ffcce5,#fff0f7);
     overflow-x:hidden;
-    color:white;
-    text-align:center;
-    min-height:100vh;
-}
-
-/* CONTAINER */
-
-.container{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:30px;
+    padding:20px;
 }
 
-.glass{
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.3);
+/* BOX */
+
+.login-box,
+.main-box{
+    background:rgba(255,255,255,0.25);
+    border:1px solid rgba(255,255,255,0.4);
     backdrop-filter:blur(15px);
     border-radius:30px;
     padding:30px;
-    width:90%;
-    max-width:430px;
+    width:100%;
+    max-width:470px;
+    text-align:center;
     box-shadow:0 8px 30px rgba(0,0,0,0.2);
     animation:fadeIn 1.5s ease;
+    position:relative;
+}
+
+.hidden{
+    display:none;
 }
 
 /* TITLE */
 
 h1{
-    font-size:40px;
+    color:#ff2f7d;
+    font-size:38px;
     margin-bottom:10px;
-    color:white;
-    text-shadow:0 0 10px rgba(255,255,255,0.7);
 }
 
-.subtitle{
-    margin-top:10px;
+h2{
+    color:#ff2f7d;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#5a2a42;
     font-size:16px;
-    color:white;
+    line-height:1.8;
+    margin-top:15px;
+    font-weight:500;
+}
+
+/* INPUT */
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:20px;
+    margin-top:20px;
+    outline:none;
+    font-size:16px;
+    text-align:center;
 }
 
 /* BUTTON */
 
 button{
-    margin-top:25px;
+    margin-top:20px;
     padding:14px 35px;
     border:none;
     border-radius:50px;
-    background:white;
-    color:#ff4f93;
-    font-size:17px;
+    background:#ff4f93;
+    color:white;
+    font-size:16px;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
     font-weight:bold;
-    box-shadow:0 5px 20px rgba(255,255,255,0.5);
+    box-shadow:0 5px 20px rgba(255,79,147,0.4);
 }
 
 button:hover{
     transform:scale(1.05);
-    background:#ffe4f0;
-}
-
-/* HIDDEN */
-
-.hidden{
-    display:none;
+    background:#ff2f7d;
 }
 
 /* GALLERY */
@@ -93,56 +108,47 @@ button:hover{
 .gallery{
     margin-top:25px;
     display:grid;
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
 .gallery img{
     width:100%;
-    border-radius:20px;
+    height:230px;
     object-fit:cover;
+    border-radius:20px;
     box-shadow:0 5px 20px rgba(0,0,0,0.2);
     animation:float 3s ease-in-out infinite;
+    transition:.3s;
 }
 
-/* MESSAGE */
-
-.message{
-    margin-top:25px;
-    line-height:1.8;
-    font-size:16px;
-    color:white;
+.gallery img:hover{
+    transform:scale(1.03);
 }
 
 /* DATE */
 
 .date{
     margin-top:20px;
+    color:#ff2f7d;
     font-size:18px;
     font-weight:bold;
 }
 
-/* HEARTS */
+/* LOVE */
 
 .love{
     position:fixed;
     top:-10px;
-    color:pink;
+    color:#ff4f93;
     animation:fall linear infinite;
     z-index:999;
 }
 
-/* QUESTION */
-
-.question-box{
-    margin-top:30px;
-}
-
-.question-box h2{
-    margin-bottom:20px;
-}
+/* NO BUTTON */
 
 #noBtn{
-    margin-left:10px;
+    position:absolute;
 }
 
 /* ANIMATION */
@@ -187,15 +193,34 @@ button:hover{
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- LOGIN -->
+
+<div class="login-box" id="loginBox">
+
+<h1>Hi Aurel 💖</h1>
+
+<p>
+Masukkan password tanggal jadian dulu yaa ✨
+</p>
+
+<input type="password"
+id="password"
+placeholder="28/08/2025">
+
+<button onclick="checkPassword()">
+Masuk 💌
+</button>
+
+</div>
+
 <!-- MAIN -->
 
-<div class="container">
-
-<div class="glass">
+<div class="main-box hidden"
+id="mainBox">
 
 <h1>Hi Ndut 💖</h1>
 
-<p class="subtitle">
+<p>
 ada sesuatu buat kamu ✨
 </p>
 
@@ -207,33 +232,44 @@ Open My Heart 💌
 
 <div id="content" class="hidden">
 
+<!-- GALLERY -->
+
 <div class="gallery">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
-    <img src="foto3.jpg">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+<img src="foto5.jpg">
+
 </div>
+
+<!-- DATE -->
 
 <div class="date">
-Since 28 Agustus 💞
+Since 28 Agustus 2025 💞
 </div>
 
-<div class="message">
+<!-- MESSAGE -->
+
+<p>
 
 Makasih ya sayang udah hadir di hidup aku 💖
 <br><br>
 
-Kamu itu rumah paling nyaman yang pernah aku temuin.
+Kamu itu rumah paling nyaman
+yang pernah aku temuin.
+<br><br>
+
 Semoga kita selalu sama-sama terus yaa ✨
 <br><br>
 
 Aku bakal selalu sayang sama kamu,
 dalam keadaan apapun 🤍
 
-</div>
+</p>
 
 <!-- QUESTION -->
-
-<div class="question-box">
 
 <h2>
 Do you love ndut? 💌
@@ -243,7 +279,9 @@ Do you love ndut? 💌
 YES 💖
 </button>
 
-<button id="noBtn" onmouseover="moveButton()">
+<button id="noBtn"
+onmouseover="moveButton()"
+onclick="moveButton()">
 NO 😭
 </button>
 
@@ -251,12 +289,36 @@ NO 😭
 
 </div>
 
-</div>
-</div>
-
 <!-- SCRIPT -->
 
 <script>
+
+/* PASSWORD */
+
+function checkPassword(){
+
+    const password =
+    document.getElementById("password").value;
+
+    if(password === "28/08/2025"){
+
+        document
+        .getElementById("loginBox")
+        .classList.add("hidden");
+
+        document
+        .getElementById("mainBox")
+        .classList.remove("hidden");
+
+    }else{
+
+        alert("password salah sayang 😭");
+
+    }
+
+}
+
+/* OPEN HEART */
 
 function openHeart(){
 
@@ -287,20 +349,18 @@ function yesLove(){
 
 }
 
-/* NO BUTTON RUN */
+/* NO BUTTON MOVE */
 
 function moveButton(){
 
     const btn =
     document.getElementById("noBtn");
 
-    btn.style.position = "absolute";
-
     btn.style.left =
-    Math.random() * 80 + "%";
+    Math.random() * 70 + "%";
 
     btn.style.top =
-    Math.random() * 80 + "%";
+    Math.random() * 70 + "%";
 
 }
 
@@ -334,12 +394,6 @@ function createLove(){
 
 setInterval(createLove,300);
 
-</script>
-
-</body>
-</html>
-
-  setInterval(createLove,300);
 </script>
 
 </body>
