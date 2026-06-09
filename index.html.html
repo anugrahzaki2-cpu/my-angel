@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Angel Premium</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(135deg,#ff8fc4,#ffd6ea,#fff);overflow-x:hidden;color:#4a2033}
+.section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.card{background:rgba(255,255,255,.25);backdrop-filter:blur(15px);padding:30px;border-radius:30px;max-width:900px;width:95%}
+h1,h2,h3{color:#c2185b}
+.btn{padding:14px 28px;border:none;border-radius:999px;background:#ff4f93;color:#fff;cursor:pointer;margin:8px}
+.timeline{max-width:700px;text-align:left;margin:auto}
+.timeline div{margin:20px 0;padding:15px;background:#ffffff70;border-radius:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px}
+.gallery img{width:100%;height:250px;object-fit:cover;border-radius:15px}
+#envelope{font-size:120px;cursor:pointer;transition:.5s}
+#envelope:hover{transform:scale(1.1)}
+#letter{display:none}
+#reasonBox{margin-top:20px;font-size:20px;font-weight:bold}
+.star{position:fixed;color:white;opacity:.7}
+video{width:100%;max-width:500px;border-radius:20px}
+</style>
+</head>
+<body>
+
+<div class="section">
+<div class="card">
+<h1>Every Love Story Is Beautiful 💖</h1>
+<h2>But Ours Is My Favorite ✨</h2>
+<p style="margin-top:15px">Website Couple Premium Edition</p>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<div id="envelope">💌</div>
+<h2>Klik Amplopnya</h2>
+<div id="letter">
+<p style="margin-top:20px">
+Makasih sudah hadir dalam hidup aku.
+Kamu adalah alasan kenapa hari-hari biasa terasa spesial. 💖
+</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Love Timeline 💞</h2>
+
+<div class="timeline">
+
+<div>
+<h3>💬 First Chat</h3>
+<p>Awal dari semua cerita kita ❤️</p>
+<video controls>
+<source src="first-chat.mp4" type="video/mp4">
+</video>
+</div>
+
+<div>
+<h3>💔 Momen Bertengkar</h3>
+<p>Walaupun pernah bertengkar, aku tetap bersyukur pernah memiliki kamu ❤️</p>
+<div class="gallery">
+<img src="bertengkar1.jpg">
+<img src="bertengkar2.jpg">
+<img src="bertengkar3.jpg">
+<img src="bertengkar4.jpg">
+<img src="bertengkar5.jpg">
+<img src="bertengkar6.jpg">
+</div>
+</div>
+
+<div>🌸 First Meet</div>
+<div>💖 Jadian - 28 Agustus 2025</div>
+<div>✨ Forever Together</div>
+
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Our Memories 📸</h2>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+<img src="foto5.jpg">
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>50 Reasons Why I Love You 💕</h2>
+<button class="btn" onclick="nextReason()">Click Me</button>
+<div id="reasonBox">💖 Tekan tombolnya</div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Love Meter ❤️</h2>
+<h1 id="meter">0%</h1>
+<button class="btn" onclick="startLove()">Calculate Love</button>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+
+<h1>🥺 Untuk Kamu</h1>
+
+<p style="margin-top:20px;line-height:2;text-align:justify">
+Aku tahu aku pernah membuat kamu kecewa.
+
+Aku menyesal karena dulu aku tidak benar-benar melihat semua chat yang kamu kirim.
+
+Padahal di setiap pesan itu ada perhatian, rasa sayang, dan usaha kamu untuk mempertahankan hubungan kita.
+
+Sekarang aku sadar kalau aku telah melewatkan banyak hal yang sebenarnya sangat berarti.
+
+Aku sadar kamu sudah berusaha. Aku sadar kamu sudah bertahan. Aku sadar kamu sudah memberi banyak kesempatan.
+
+Dan jujur... aku benar-benar menyesal.
+
+Kalau aku diberi kesempatan sekali lagi, aku ingin memperbaiki semuanya.
+
+Aku ingin lebih mendengarkan kamu, menghargai kamu, dan menjaga hati kamu.
+
+Karena sampai sekarang aku masih sayang sama kamu ❤️
+</p>
+
+<h2 style="margin-top:30px">❤️ Mau nggak balikan sama aku? ❤️</h2>
+
+<div style="margin-top:20px">
+<button class="btn" onclick="yesAnswer()">YES ❤️</button>
+<button class="btn" id="noBtn">NO 💔</button>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h1>I LOVE YOU 💖</h1>
+<h2>Forever With Aurel 💞</h2>
+<button class="btn" onclick="confetti()">YES FOREVER</button>
+</div>
+</div>
+
+<script>
+document.getElementById("envelope").onclick=()=>{
+document.getElementById("letter").style.display="block";
+};
+
+const reasons=[
+"Karena senyummu","Karena perhatianmu","Karena kamu lucu",
+"Karena kamu selalu ada","Karena kamu spesial","Karena semuanya tentang kamu"
+];
+
+let r=0;
+function nextReason(){
+document.getElementById("reasonBox").innerHTML=reasons[r%reasons.length];
+r++;
+}
+
+function startLove(){
+let n=0;
+let i=setInterval(()=>{
+n+=Math.floor(Math.random()*50000);
+document.getElementById("meter").innerHTML=n+"%";
+if(n>999999){
+document.getElementById("meter").innerHTML="999999999%";
+clearInterval(i);
+}
+},30);
+}
+
+function yesAnswer(){
+document.body.innerHTML += `
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#ff8fc4,#ffd6ea,#fff);display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:999999;text-align:center;padding:30px;">
+<h1 style="font-size:70px">😭❤️</h1>
+<h1>Makasih Sayang...</h1>
+<p style="max-width:700px;font-size:22px;">
+Aku janji akan belajar dari kesalahan dan lebih menghargai setiap perhatian yang kamu kasih.
+Aku sayang kamu ❤️
+</p>
+</div>`;
+confetti();
+}
+
+const noBtn=document.getElementById("noBtn");
+const texts=["NO 💔","Yakin? 🥺","Jangan Dong 😭","Please ❤️","Kasih Kesempatan 😭","Klik YES Aja ❤️"];
+let idx=0;
+
+function moveNo(){
+const x=Math.random()*(window.innerWidth-180);
+const y=Math.random()*(window.innerHeight-100);
+noBtn.style.position="fixed";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+idx++;
+noBtn.innerHTML=texts[idx%texts.length];
+}
+
+noBtn.addEventListener("mouseenter",moveNo);
+noBtn.addEventListener("click",(e)=>{e.preventDefault();moveNo();});
+
+function confetti(){
+for(let i=0;i<120;i++){
+let e=document.createElement("div");
+e.innerHTML=["💖","💕","💞","✨","🎉"][Math.floor(Math.random()*5)];
+e.className="star";
+e.style.left=Math.random()*100+"vw";
+e.style.top="-20px";
+e.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),7000);
+}
+}
+</script>
+
+</body>
+</html>
